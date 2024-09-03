@@ -16,6 +16,16 @@ function getTwoSumBruteForce(inputArray,target){
   console.log(getTwoSumBruteForce([2,4,9,6,5],10));
   
 
+
+  /*
+  * 
+  * we could achieve this via sort array
+  * Time complexity : O(nlogn)
+  * Spce complexity : O(1)
+  */
+
+
+
   /*
   * 
   * Two Sum : Better solution
@@ -36,3 +46,5 @@ function getTwoSumBruteForce(inputArray,target){
   
   }
   console.log(twoSumBetter([2,4,9,6,5],10));
+  console.log(twoSumBetter([16,4,23,8,15,42,1,2],19));
+
