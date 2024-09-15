@@ -1,2 +1,5 @@
 # leetcode-javascript
-This repo having data of leetcode javascript solutions
+This repo having content of leetcode javascript solutions
+
+- Brute Force
+- Efficient
