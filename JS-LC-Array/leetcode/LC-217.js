@@ -51,3 +51,23 @@ console.log(containsDuplicate([2,14,18,22,22]));
 
 
 
+
+var containsDuplicate = function(nums) {
+
+    let store = new Map;
+
+    for(let element of nums){
+        if(!store.has(element)){
+            store.set(element,1);
+        } else 
+            return true;
+    }
+    return false;
+};
+
+console.log(containsDuplicate([1,2,3,1]));
+console.log(containsDuplicate([1,2,3,4]));
+console.log(containsDuplicate([1,1,1,3,3,4,3,2,4,2]));
+console.log(containsDuplicate([2,14,18,22,22]));
+
+
