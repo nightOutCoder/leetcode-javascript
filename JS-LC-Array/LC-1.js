@@ -1,50 +1,44 @@
 /*
-* Two Sum : Brute force solution
-* Time complexity : O(n2)
-* Spce complexity : O(1)
-*/
+ * Two Sum : Brute force solution
+ * Time complexity : O(n2)
+ * Spce complexity : O(1)
+ */
 
-function getTwoSumBruteForce(inputArray,target){
-    for(let i = 0; i<inputArray.length; i++){
-        for(let j = i+1; j < inputArray.length;j++){
-          if((inputArray[i] + inputArray[j]) === target){
-            return [i,j];
-          }
-        }
-      }
-  }
-  console.log(getTwoSumBruteForce([2,4,9,6,5],10));
-  
+// function getTwoSumBruteForce(inputArray, target) {
+//   for (let i = 0; i < inputArray.length; i++) {
+//     for (let j = i + 1; j < inputArray.length; j++) {
+//       if (inputArray[i] + inputArray[j] === target) {
+//         return [i, j];
+//       }
+//     }
+//   }
+// }
+// console.log(getTwoSumBruteForce([2, 4, 9, 6, 5], 10));
 
+/*
+ *
+ * we could achieve this via sort array
+ * Time complexity : O(nlogn)
+ * Spce complexity : O(1)
+ */
 
-  /*
-  * 
-  * we could achieve this via sort array
-  * Time complexity : O(nlogn)
-  * Spce complexity : O(1)
-  */
+/*
+ *
+ * Two Sum : Better solution
+ * Time complexity : O(n)
+ * Spce complexity : O(n)
+ */
+function twoSumBetter(inputArray, target) {
+  store = {};
+  for (let i = 0; i < inputArray.length; i++) {
+    secondElement = target - inputArray[i];
 
-
-
-  /*
-  * 
-  * Two Sum : Better solution
-  * Time complexity : O(n)
-  * Spce complexity : O(n)
-  */
-  function twoSumBetter(inputArray,target){
-    store= {}; 
-    for(let i = 0; i < inputArray.length; i++){
-      secondElement = target-inputArray[i];
-  
-      if(secondElement in store){
-        return [store[secondElement],i];
-      } else {
-         store[inputArray[i]] = i;
-      }
+    if (secondElement in store) {
+      return [store[secondElement], i];
+    } else {
+      store[inputArray[i]] = i;
     }
-  
   }
-  console.log(twoSumBetter([2,4,9,6,5],10));
-  console.log(twoSumBetter([16,4,23,8,15,42,1,2],19));
-
+}
+console.log(twoSumBetter([2, 4, 9, 6, 5], 10));
+console.log(twoSumBetter([16, 4, 23, 8, 15, 42, 1, 2], 19));
